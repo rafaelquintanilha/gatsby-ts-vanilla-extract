@@ -1,54 +1,15 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# How to incrementally migrate a Gatsby app to TypeScript
 
-## 🚀 Quick start
+## Steps
 
-1.  **Create a Gatsby site.**
+1. Install a Gatsby project but do not select TypeScript as language
+2. Install de dependencies and generate `tsconfig.json` as [stated in Gatsby docs](https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/#migrating-to-typescript)
+3. Make sure to add `"jsx": "react"` in `tsconfig.json`
+4. [OPTIONAL] Install `prop-types` and use `InferProps` to guarantee runtime erros will still be caught. [Read more here](https://blog.logrocket.com/comparing-typescript-and-proptypes-in-react-applications/).
+5. In order to import JS files in components, set `allowJs: true` in `tsconfig.json`. [Source](https://stackoverflow.com/a/56909179/4487722).
+6. You also need to set `outDir: "./dist"` after setting the above config. [Source](https://stackoverflow.com/a/52910292/4487722).
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+### Good Resources:
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+- https://blog.logrocket.com/comparing-typescript-and-proptypes-in-react-applications/
+- https://dillionmegida.com/p/convert-blog-to-typescript/
