@@ -1,6 +1,7 @@
 import React from "react";
 import ChildTypeScript from "./ChildTypeScript";
 import RegularComponent from "./RegularComponent.js"
+import * as css from './WithTypeScript.module.css'
 
 type Props = {
   magicNumber: number;
@@ -9,7 +10,7 @@ type Props = {
 const WithTypeScript = ({ magicNumber }: Props) => {
   return (
     <div>
-      <div>This component has TypeScript! Magic number is {magicNumber}</div>
+      <div className={css['main']}>This component has TypeScript! Magic number is {magicNumber}</div>
       <ChildTypeScript magicNumber={magicNumber} />
       <RegularComponent />
     </div>
