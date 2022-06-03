@@ -1,24 +1,25 @@
-import React from 'react'
+import React from "react";
 import PropTypes, { InferProps } from "prop-types";
-import * as css from './ChildTypeScript.css'
+import * as css from "./ChildTypeScript.css";
 
 //type Props = {
 //  magicNumber: number
 //}
 
 const Props = {
-  magicNumber: PropTypes.number.isRequired
-}
+  magicNumber: PropTypes.number.isRequired,
+};
 
 type ChildTypeScriptTypes = InferProps<typeof Props>;
 
-const ChildTypeScript = ({magicNumber}: ChildTypeScriptTypes) => {
+const ChildTypeScript = ({ magicNumber }: ChildTypeScriptTypes) => {
   return (
-    <div className={css['container']}>Magic number squared is <span>{magicNumber ** 2}</span></div>
-  )
-}
+    <div className={css["container"]}>
+      Magic number squared is <span>{magicNumber ** 2}</span>
+    </div>
+  );
+};
 
 ChildTypeScript.propTypes = Props;
 
-
-export default ChildTypeScript
+export default ChildTypeScript;
